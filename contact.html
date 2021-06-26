@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<head>
+    <title>contact us</title>
+    <link rel="stylesheet" href="./css/top-vibration.css" >
+    <link rel="stylesheet" href="./css/bubble.css" >
+    <script src="//cdn.jsdelivr.net/npm/less@3.13" ></script>
+    <link rel="stylesheet" href="./css/retro-navbar.css" />
+    <link rel="stylesheet" href="./css/contact-form.css" />
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+    (function() {
+    emailjs.init("user_dTEgy7iI0xPUvE7OaVaMe");
+    })();
+    </script>
+
+<script type="text/javascript">
+    window.onload = function() {
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // generate a five digit number for the contact_number variable
+            this.contact_number.value = Math.random() * 100000 | 0;
+            // these IDs from the previous steps
+            emailjs.sendForm('contact_service', 'contact_form', this)
+                .then(function() {
+                    console.log('SUCCESS!');
+                }, function(error) {
+                    console.log('FAILED...', error);
+                });
+        });
+    }
+</script>
+
+</head>
+
+<body>
+
+    <nav class="top-right open">
+        <a class="disc l1" href="./contact.html">
+            <div>
+            reach out
+                </div>
+        </a>
+        <a class="disc l2"  href="./music.html">
+            <div>music</div>
+        </a>
+        <a class="disc l3" href="./auction-stats.html">
+            <div>apparels</div>
+        </a>
+        <a class="disc l4" href="./about.html">
+            <div>about</div>
+        </a>
+        <a class="disc l5 toggle">
+            hey!
+        </a>
+    </nav>
+
+
+    <!-- <form id="contact-form">
+        <input type="hidden" name="contact_number">
+        <label>Name</label>
+        <input type="text" name="user_name">
+        <label>Email</label>
+        <input type="email" name="user_email">
+        <label>Message</label>
+        <textarea name="message"></textarea>
+        <input type="submit" value="Send">
+    </form> -->
+
+
+    <div class="background">
+        <div class="container">
+          <div class="screen">
+            <div class="screen-header">
+              <div class="screen-header-left">
+                <div class="screen-header-button close"></div>
+                <div class="screen-header-button maximize"></div>
+                <div class="screen-header-button minimize"></div>
+              </div>
+              <div class="screen-header-right">
+                <div class="screen-header-ellipsis"></div>
+                <div class="screen-header-ellipsis"></div>
+                <div class="screen-header-ellipsis"></div>
+              </div>
+            </div>
+            <div class="screen-body">
+              <div class="screen-body-item left">
+                <div class="app-title">
+                  <span>contact</span>
+                  <span>us</span>
+                </div>
+                <!-- <div class="app-contact">CONTACT INFO : +62 81 314 928 595</div> -->
+              </div>
+              <div class="screen-body-item">
+                <div class="app-form">
+                  <div class="app-form-group">
+                    <input class="app-form-control" placeholder="name" name="sender_name" >
+                  </div>
+                  <div class="app-form-group">
+                    <input class="app-form-control" placeholder="email" name="sender_email">
+                  </div>
+                  <!-- <div class="app-form-group">
+                    <input class="app-form-control" placeholder="CONTACT NO">
+                  </div> -->
+                  <div class="app-form-group message">
+                    <textarea class="app-form-control" placeholder="message" name="sender_message"></textarea>
+                  </div>
+                  <div class="app-form-group buttons">
+                    <button class="app-form-button">send</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+
+<script>
+    toggle = document.querySelectorAll(".toggle")[0];
+nav = document.querySelectorAll("nav")[0];
+toggle_open_text = 'hey!';
+toggle_close_text = 'hoo!';
+
+toggle.addEventListener('click', function() {
+	nav.classList.toggle('open');
+	
+  if (nav.classList.contains('open')) {
+    toggle.innerHTML = toggle_close_text;
+  } else {
+    toggle.innerHTML = toggle_open_text;
+  }
+}, false);
+
+setTimeout(function(){
+	nav.classList.toggle('open');	
+}, 800);
+</script>
+
+</body>
+
+</html>
