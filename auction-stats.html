@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<head>
+    <title>auction stats</title>
+    <link rel="stylesheet" href="./css/top-vibration.css" >
+    <link rel="stylesheet" href="./css/bubble.css" >
+    <script src="//cdn.jsdelivr.net/npm/less@3.13" ></script>
+    <link rel="stylesheet" href="./css/retro-navbar.css" />
+</head>
+
+<body>
+
+    <nav class="top-right open">
+        <a class="disc l1">
+            <div>
+            contact
+                </div>
+        </a>
+        <a class="disc l2">
+            <div>music</div>
+        </a>
+        <a class="disc l3" href="./auction-stats.html">
+            <div>apparels</div>
+        </a>
+        <a class="disc l4" href="./index.html">
+            <div> &lt;| home</div>
+        </a>
+        <a class="disc l5 toggle">
+            hey!
+        </a>
+    </nav>
+
+
+
+<h5>auction stats</h5>
+
+
+<div class="bubble bubble--highlight">
+<a href="./auction-stats.html">
+    show me the auction stats
+</a>
+</div>
+
+<script>
+    toggle = document.querySelectorAll(".toggle")[0];
+nav = document.querySelectorAll("nav")[0];
+toggle_open_text = 'hi!';
+toggle_close_text = 'bye!';
+
+toggle.addEventListener('click', function() {
+	nav.classList.toggle('open');
+	
+  if (nav.classList.contains('open')) {
+    toggle.innerHTML = toggle_close_text;
+  } else {
+    toggle.innerHTML = toggle_open_text;
+  }
+}, false);
+
+setTimeout(function(){
+	nav.classList.toggle('open');	
+}, 800);
+</script>
+
+</body>
+
+</html>
