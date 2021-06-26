@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 
 <head>
-    <title>about</title>
+    <title>apparels</title>
     <link rel="stylesheet" href="./css/top-vibration.css" >
     <link rel="stylesheet" href="./css/bubble.css" >
+    <link rel="stylesheet/less" type="text/css" href="./css/cards.less" />
     <script src="//cdn.jsdelivr.net/npm/less@3.13" ></script>
     <link rel="stylesheet" href="./css/retro-navbar.css" />
     <link rel="stylesheet" href="./css/stripped-diagonal-btn.css" />
+
+
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,13 +25,13 @@
     <nav class="top-right open">
         <a class="disc l1" href="./contact.html">
             <div>
-                contact
-            </div>
+            reach out
+                </div>
         </a>
         <a class="disc l2"  href="./music.html">
             <div>music</div>
         </a>
-        <a class="disc l3" href="./auction-stats.html">
+        <a class="disc l3" href="./apparels.html">
             <div>apparels</div>
         </a>
         <a class="disc l4" href="./index.html">
@@ -37,18 +41,17 @@
             hey!
         </a>
     </nav>
-    
-    
-    <img src="./img/under_the_bottom.png" width="360px" height="360px">
-    <a href="https://utbworldwide.com/about/" target="_blank">
-        <button class="btn btn--stripe">
-                more about us
-        </button>
-    </a>
-
-    <div class="txt" id="typedtext"></div>
 
 
+
+
+
+
+<!--     
+    <div>
+        <iframe src="https://open.spotify.com/embed/artist/5OOJUPzDTRkcqKNI5r044w?theme=0" width="80%" height="420" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>    
+        <iframe src="https://open.spotify.com/embed/album/1O3cVK9VA5oj6LV2jytqvn?theme=0" width="80%" height="420" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    </div> -->
 
 
 
@@ -59,49 +62,37 @@
 </div> -->
 
 <script>
-//typewriter
-// set up text to print, each item in array is new line
-var aText = new Array(
-"Under The Bottom is more than just smiley faces;",
-"many seem to think that we just came up with a clever idea about some happy faces and ran with it.",
-"We did in fact think of a clever and catchy theme for our clothing line,",
-"but in actuality there is much more depth than meets the eye.",
-"We are building a base for new, fresh clothing so that people of all ages can relate,",
-"but we are building a base (from under the bottom) where the smiley logo is somehow incorporated in every design"
-);
-var iSpeed = 100; // time delay of print out
-var iIndex = 0; // start printing array at this posision
-var iArrLength = aText[0].length; // the length of the text array
-var iScrollAt = 20; // start scrolling up at this many lines
- 
-var iTextPos = 0; // initialise text position
-var sContents = ''; // initialise contents variable
-var iRow; // initialise current row
- 
-function typewriter()
-{
- sContents =  ' ';
- iRow = Math.max(0, iIndex-iScrollAt);
- var destination = document.getElementById("typedtext");
- 
- while ( iRow < iIndex ) {
-  sContents += aText[iRow++] + '<br />';
- }
- destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "_";
- if ( iTextPos++ == iArrLength ) {
-  iTextPos = 0;
-  iIndex++;
-  if ( iIndex != aText.length ) {
-   iArrLength = aText[iIndex].length;
-   setTimeout("typewriter()", 500);
-  }
- } else {
-  setTimeout("typewriter()", iSpeed);
- }
-}
 
+//cards
+$(function() {
+        $('.material-card > .mc-btn-action').click(function () {
+            var card = $(this).parent('.material-card');
+            var icon = $(this).children('i');
+            icon.addClass('fa-spin-fast');
 
-typewriter();
+            if (card.hasClass('mc-active')) {
+                card.removeClass('mc-active');
+
+                window.setTimeout(function() {
+                    icon
+                        .removeClass('fa-arrow-left')
+                        .removeClass('fa-spin-fast')
+                        .addClass('fa-bars');
+
+                }, 800);
+            } else {
+                card.addClass('mc-active');
+
+                window.setTimeout(function() {
+                    icon
+                        .removeClass('fa-bars')
+                        .removeClass('fa-spin-fast')
+                        .addClass('fa-arrow-left');
+
+                }, 800);
+            }
+        });
+    });
 
 
 // navbar
@@ -129,3 +120,6 @@ setTimeout(function(){
 </body>
 
 </html>
+
+
+
