@@ -31,8 +31,6 @@
  p {
     background-color: #111;
     text-transform: lowercase;
-
-
  }
   
   @keyframes textflicker {

@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 
 <head>
-    <title>about</title>
-    <link rel="stylesheet" href="./css/top-vibration.css" >
-    <link rel="stylesheet" href="./css/bubble.css" >
+    <title>music</title>
     <script src="//cdn.jsdelivr.net/npm/less@3.13" ></script>
     <link rel="stylesheet" href="./css/retro-navbar.css" />
-    <link rel="stylesheet" href="./css/stripped-diagonal-btn.css" />
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="./css/multimedia.css"/>
+    <link rel="stylesheet" href="./css/styled-text.css"/>
+
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+
+    <script src="./js/music-navbar.js"></script>
 
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
-    <!-- <link href="https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise" rel="stylesheet" type="text/css"/> -->
-    <link rel="stylesheet" href="./css/typed-text.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap" rel="stylesheet">
+
+
 </head>
 
 <body>
@@ -28,7 +32,7 @@
         <a class="disc l2"  href="./music.html">
             <div>music</div>
         </a>
-        <a class="disc l3" href="./apparels.html">
+        <a class="disc l3" href="https://www.utblifestyle.store/" target="_blank">
             <div>apparels</div>
         </a>
         <a class="disc l4" href="./index.html">
@@ -39,41 +43,19 @@
         </a>
     </nav>
     
-    <div>
+
+    <div class="styled-txt" style="margin-top: 60px; background-color: rgb(15, 135, 49);">
+        <h3 style="margin-left: 100px;">music & videos</h3>
+    </div>
+
+    <div style="margin-left: 80px; margin-top: 120px;">
         <iframe src="https://open.spotify.com/embed/artist/5OOJUPzDTRkcqKNI5r044w?theme=0" width="80%" height="420" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>    
+        <br><br>
         <iframe src="https://open.spotify.com/embed/album/1O3cVK9VA5oj6LV2jytqvn?theme=0" width="80%" height="420" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
     </div>
 
-
-
-<!-- <div class="bubble bubble--highlight">
-<a href="./auction-stats.html">
-    show me the auction stats
-</a>
-</div> -->
-
 <script>
-
-// navbar
-
-    toggle = document.querySelectorAll(".toggle")[0];
-nav = document.querySelectorAll("nav")[0];
-toggle_open_text = 'hey!';
-toggle_close_text = '<img src="./img/under_the_bottom.png" width="112px" height="112px">';
-
-toggle.addEventListener('click', function() {
-	nav.classList.toggle('open');
-	
-  if (nav.classList.contains('open')) {
-    toggle.innerHTML = toggle_close_text;
-  } else {
-    toggle.innerHTML = toggle_open_text;
-  }
-}, false);
-
-setTimeout(function(){
-	nav.classList.toggle('open');	
-}, 800);
+    document.addEventListener("DOMContentLoaded", loadNavbar());
 </script>
 
 </body>

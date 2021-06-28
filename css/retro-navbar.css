@@ -2,9 +2,6 @@
 html, body {
   height: 100%; }
 
-body {
-  background: beige;
-  font-family: Alegreya Sans, sans-serif; }
 
 nav {
   display: block;
@@ -157,7 +154,9 @@ nav {
   .open .toggle {
     transform: rotate3d(0, 0, 1, 0deg); }
   .toggle:hover {
+    /* background: shade(gold, 90%); */
     background: shade(gold, 90%);
+
     text-decoration: underline; }
   .toggle:active {
     background: shade(gold, 50%);
@@ -165,4 +164,10 @@ nav {
     transform: scale(0.9);
     transition-duration: 0s; }
 
+
+    a {
+      all: unset;
+    }
+    
+    
 /*# sourceMappingURL=retro-navbar.css.map */

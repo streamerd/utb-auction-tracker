@@ -1,0 +1,11 @@
+.styled-txt{
+    font-family: 'Kirang Haerang', cursive;
+    color: rgb(18, 18, 24);
+    font-size: 36px;
+}
+
+.styled-txt .h3{
+    font-family: 'Kirang Haerang', cursive;
+    color: rgb(18, 18, 24);
+    font-size: 18px;
+}

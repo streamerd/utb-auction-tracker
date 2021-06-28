@@ -10,13 +10,13 @@
 body {
   min-height: 100vh;
   width: 100%;
-  background: #eee;
+  /* background: #eee; */
   /* center the content in the page (mainly horizontally) */
   display: grid;
   place-items: center;
   /* include the same texture used for the .bubble containers, but with notably less opacity */
-  background: url('data:image/svg+xml;utf8,<svg width="100" height="100" transform="rotate(0)" opacity="0.2" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g  fill="%23250E17"><circle cx="25" cy="25" r="12.5"/><circle cx="75" cy="75" r="12.5"/><circle cx="75" cy="25" r="12.5"/><circle cx="25" cy="75" r="12.5"/></g></svg>'),
-    #ffcd28;
+  /* background: url('data:image/svg+xml;utf8,<svg width="100" height="100" transform="rotate(0)" opacity="0.2" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g  fill="%23250E17"><circle cx="25" cy="25" r="12.5"/><circle cx="75" cy="75" r="12.5"/><circle cx="75" cy="25" r="12.5"/><circle cx="25" cy="75" r="12.5"/></g></svg>'),
+    #ffcd28; */
   background-size: 10px, 100%;
 }
 
@@ -35,7 +35,7 @@ body {
     #fff;
   background-size: 12px, 100%;
   /* solid border */
-  border: 0.4rem solid #000;
+  border: 0.4rem solid rgb(230, 194, 52);
   /* position relative for the :before pseudo element */
   position: relative;
 }
