@@ -2,7 +2,7 @@ function loadNavbar() {
     toggle = document.querySelectorAll(".toggle")[0];
 nav = document.querySelectorAll("nav")[0];
 toggle_open_text = 'hey!';
-toggle_close_text = '<img src="./img/under_the_bottom.png" width="112px" height="112px">';
+toggle_close_text = '<img src="./img/utb_world-removebg.png" width="112px" height="112px">';
 
 toggle.addEventListener('click', function() {
 	nav.classList.toggle('open');
