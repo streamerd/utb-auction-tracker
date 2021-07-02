@@ -3,7 +3,7 @@ function counter() {
     countDownDate.toLocaleDateString("en-US", {timeZone: "America/Los_Angeles"})
     countDownDate = countDownDate.getTime();
     
-    var myfunc = setInterval(function() {
+    setInterval(function() {
         var now = new Date()
         now.toLocaleDateString("en-US", {timeZone: "America/Los_Angeles"})
         now = now.getTime();
@@ -17,12 +17,6 @@ function counter() {
         
         var countdown = document.getElementById("tiles"); // get tag element
         countdown.innerHTML = "<span>" + days + "</span><span>" + hours + "</span><span>" + minutes + "</span><span>" + seconds + "</span>"; 
-        // console.log(`
-        //     days => ${days} \n
-        //     hours => ${hours} \n
-        //     minutes => ${minutes} \n
-        //     seconds => ${seconds} \n
-        // `)
         }, 1000)
      
 }
