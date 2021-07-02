@@ -94,6 +94,7 @@ function writeArtworkDetails(edition) {
   `);
 
   document.getElementById("artwork-name").innerHTML = artworkName
+  document.getElementById("artist-name").innerHTML = "by " + artistName;
 
 }
 function writeBiddindHistory(edition) {
@@ -106,6 +107,7 @@ function writeBiddindHistory(edition) {
   bidder = firstBidding["bidder"];
   timestamp = epochToLocalDatetime(firstBidding["timestamp"]); // convert from epoch
   ethValue = firstBidding["ethValue"]
+  artistName
 
   // console.log(`first bidding: ${JSON.stringify(firstBidding)}`);
 
@@ -113,6 +115,7 @@ function writeBiddindHistory(edition) {
   document.getElementById("bidder-address").innerHTML = bidder;
   document.getElementById("bid-timestamp").innerHTML = timestamp;
   document.getElementById("bid-value-eth").innerHTML = ethValue + " ETH";
+
 
 }
 
