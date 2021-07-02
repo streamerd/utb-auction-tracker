@@ -104,14 +104,14 @@ function writeBiddindHistory(edition) {
 
   bidName = firstBidding["name"]
   bidder = firstBidding["bidder"];
-  timestamp = epochToLocalDatetime(firstBidding["timestamp"]); // convert epoch
+  timestamp = epochToLocalDatetime(firstBidding["timestamp"]); // convert from epoch
   ethValue = firstBidding["ethValue"]
 
-  console.log(`first bidding: ${JSON.stringify(firstBidding)}`);
+  // console.log(`first bidding: ${JSON.stringify(firstBidding)}`);
 
   document.getElementById("bid-name").innerHTML = bidName;
-  document.getElementById("bidder-address").innerHTML = "by: " + bidder;
-  document.getElementById("bid-timestamp").innerHTML = "at:" + timestamp;
+  document.getElementById("bidder-address").innerHTML = bidder;
+  document.getElementById("bid-timestamp").innerHTML = timestamp;
   document.getElementById("bid-value-eth").innerHTML = ethValue + " ETH";
 
 }
@@ -119,7 +119,6 @@ function writeBiddindHistory(edition) {
 function epochToLocalDatetime(timestamp) {
   var date = new Date(0);
   date.setUTCSeconds(timestamp);
-  console.log(`timestamp: ${timestamp} to local: ${date}`);
   return date;
 }
 
