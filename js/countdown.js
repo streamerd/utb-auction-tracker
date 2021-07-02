@@ -1,37 +1,28 @@
 function counter() {
+    var countDownDate = new Date("August 5, 2021 08:00:00")
+    countDownDate.toLocaleDateString("en-US", {timeZone: "America/Los_Angeles"})
+    countDownDate = countDownDate.getTime();
+    
+    var myfunc = setInterval(function() {
+        var now = new Date()
+        now.toLocaleDateString("en-US", {timeZone: "America/Los_Angeles"})
+        now = now.getTime();
 
-                        
-    var target_date = new Date().getTime() + (1000*3600*48); // set the countdown date
-    var days, hours, minutes, seconds; // variables for time units
-    
-    var countdown = document.getElementById("tiles"); // get tag element
-    
-    getCountdown();
-    
-    setInterval(function () { getCountdown(); }, 1000);
-    
-    function getCountdown(){
-    
-        // find the amount of "seconds" between now and target
-        var current_date = new Date().getTime();
-        var seconds_left = (target_date - current_date) / 1000;
-    
-        days = pad( parseInt(seconds_left / 86400) );
-        seconds_left = seconds_left % 86400;
-             
-        hours = pad( parseInt(seconds_left / 3600) );
-        seconds_left = seconds_left % 3600;
-              
-        minutes = pad( parseInt(seconds_left / 60) );
-        seconds = pad( parseInt( seconds_left % 60 ) );
-    
-        // format countdown string + set tag value
+        var timeleft = countDownDate - now;
+            
+        var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+        
+        var countdown = document.getElementById("tiles"); // get tag element
         countdown.innerHTML = "<span>" + days + "</span><span>" + hours + "</span><span>" + minutes + "</span><span>" + seconds + "</span>"; 
-    }
-    
-    function pad(n) {
-        return (n < 10 ? '0' : '') + n;
-    }
-    
+        // console.log(`
+        //     days => ${days} \n
+        //     hours => ${hours} \n
+        //     minutes => ${minutes} \n
+        //     seconds => ${seconds} \n
+        // `)
+        }, 1000)
      
 }
