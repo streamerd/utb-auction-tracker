@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<head>
+    <title>bidding history</title>
+
+
+    <link rel="stylesheet" href="./css/bidding-detail-cards.css">
+    <link rel="stylesheet" href="./css/retro-navbar.css" />
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto+Slab:400,700" />
+
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+
+    <!-- <script src="./js/navbar.js"></script> -->
+    <script src="./js/navbar.js"></script>
+
+    <script src="./js/dataFetcher.js"></script>
+
+      
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Fugaz+One|Merriweather|ZCOOL+QingKe+HuangYou" rel="stylesheet"> 
+
+</head>
+
+<body>
+
+<div style="color: black !important;">
+
+  <nav class="top-right open">
+    <a class="disc l1" href="./contact.html">
+        <div>
+        reach out
+            </div>
+    </a>
+    <a class="disc l2"  href="./music.html">
+        <div>multimedia</div>
+    </a>
+    <a class="disc l3" href="https://www.utblifestyle.store/" target="_blank">
+        <div>apparels</div>
+    </a>
+    <a class="disc l4" href="./index.html">
+        <div>home</div>
+    </a>
+    <a class="disc l5 toggle">
+        hey!
+    </a>
+</nav>
+</div>
+
+<header>
+  <h1>~ on-air ~</h1>
+  <!-- <h2><em>..an NFT that is intentional</em></h2> -->
+</header>
+
+<div class="card-box">
+  <div class="big-card">
+   <div class="card-header">
+    <div class="card-title" id="artwork-name">smiley</div>
+    <div class="collection-total-value">Est. Value $557.30</div>
+   </div>
+   <div class="big-card-count">Bidding will start at x.y.z</div>
+   <div class="big-card-bar"></div>
+  </div>
+  <div class="set-card-box">
+   <div class="set-card">
+    <div class="set-icon">
+      <img src="./img/under_the_bottom.png" style="background-color: black;"/>
+
+    </div>
+    <div class="set-info">
+     <div class="set-title" id="bid-name"></div>
+     <div class="set-value" id="bid-value-eth"></div>
+     <div class="collection-count" id="bidder-address"></div>
+     <div class="collection-count" id="bid-timestamp"> </div>
+
+     <!-- <div class="count-bar"></div> -->
+    </div>
+   </div>
+   
+    
+   </div>
+  </div>
+ </div>
+
+
+
+<script>
+  var editionId = "102775";
+  document.addEventListener("DOMContentLoaded", loadNavbar());
+  document.addEventListener("DOMContentLoaded", getBiddingHistory(editionId));
+
+</script>
+
+</body>
+
+</html>
