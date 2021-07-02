@@ -3,7 +3,7 @@ html, body {
   
   body {
 	background: rgb(10, 10, 10);
-    font-family: Alegreya Sans, sans-serif; 
+    /* font-family: Alegreya Sans, sans-serif;  */
     font-family: 'Kirang Haerang', cursive;
     color: #000;
     display: grid;
