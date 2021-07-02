@@ -6,10 +6,12 @@
     <link rel="stylesheet" href="./css/top-vibration.css" >
     <link rel="stylesheet" href="./css/bubble.css" >
     <link rel="stylesheet" href="./css/glitch.css" >
+    <link rel="stylesheet" href="./css/countdown.css">
 
 
     <script src="//cdn.jsdelivr.net/npm/less@3.13" ></script>
     <script src="./js/navbar.js"></script>
+    <script src="./js/countdown.js"></script>
     
     <link rel="stylesheet" href="./css/retro-navbar.css" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -50,6 +52,16 @@
     <h1> Under the B<span><img src="./img/biggty-smiley-removebg.png" width="54px" height="54px"></span>tt<span><img src="./img/biggty-smiley-removebg.png" width="54px" height="54px"></span>m</h1>
     <!-- <p>The saying “never over the top” is a lifestyle we at UTB live by. Keep everything unique, fresh, and catchy; never go over the top; never over do it nor water it down. We expect big things from ourselves in the near future and will settle for nothing less.</p> -->
 
+    <div id="countdown">
+        <div id='tiles'></div>
+        <div class="labels">
+          <li>Days</li>
+          <li>Hours</li>
+          <li>Mins</li>
+          <li>Secs</li>
+        </div>
+      </div>
+      
 <div class="bubble bubble--highlight">
 <a href="./bidding-history.html">
     show me the auction stats
@@ -58,6 +70,7 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", loadNavbar());
+    document.addEventListener("DOMContentLoaded", counter());
 </script>
 
 </body>
