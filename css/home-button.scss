@@ -1,0 +1,91 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+@function stack-shadows($length: 10, $x: -1, $y: 1, $color: #3f3830) {
+  $shadow: '';
+  $i: 0;
+  @for $i from 0 through $length {
+    $shadow: $shadow + ($x * $i) + 'px ' + ($y * $i) + 'px 0 ' +  $color;
+    $i: $i + 1;
+    @if $i <= $length {
+      $shadow: $shadow + ', ';
+    }
+  }
+  @return $shadow;
+}
+
+@mixin stacked-shadows($args...) {
+  box-shadow: #{stack-shadows($args...)};
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Open Sans Condensed', sans-serif;
+  background: #e3d9cd;
+}
+
+.title {
+  font-family: 'Smythe', cursive;
+  font-size: 10vh;
+  color: #3f3830;
+  letter-spacing: 4px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.brick {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 40px 0;
+  position: relative;
+  cursor: pointer;
+    
+}
+
+.brick-front {
+  display: inline-block;
+  padding: 20px;
+  color: #3f3830;
+  letter-spacing: 4px;
+  border: 4px solid #3f3830;
+  background-color: darken(#e3d9cd, 3%);
+  position: relative;
+  transition: all .2s ease;
+  transform: translate3d( 0,0,0 );
+  box-shadow: 0 0 0 0 rgba( 0,0,0,1 );
+
+  &:hover {
+    transform: translate3d( 10px,-10px,0 );
+    @include stacked-shadows();
+  }
+}
+
+.brick-set {
+  margin: 40px 0;
+  padding: 0;
+
+  .brick {
+    margin: 0;
+    
+    .brick-front {
+      transform: translate3d( 10px,-10px,0 );
+      @include stacked-shadows();
+
+      &:hover {
+        transform: translate3d( 0,0,0 );
+        @include stacked-shadows(0);
+      }
+    }
+  }
+}

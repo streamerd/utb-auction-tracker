@@ -5,8 +5,11 @@
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/top-vibration.css" >
     <link rel="stylesheet" href="./css/bubble.css" >
+    <link rel="stylesheet" href="./css/speech-bubble.css" >
     <link rel="stylesheet" href="./css/glitch.css" >
     <link rel="stylesheet" href="./css/countdown.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Baloo+2:400,800&display=swap" rel="stylesheet">
 
 
     <script src="https://cdn.jsdelivr.net/npm/less@3.13" ></script>
@@ -43,11 +46,12 @@
             hey!
         </a>
     </nav>
-
-
+<!-- 
+    <section>
+        <blockquote class="electric speech-bubble">Put Your Money Where your  </br>mouth is</blockquote>
+      </section> -->
 
     <img src="./img/utb.png" width="480px" height="480px">
-
 
 
     <h1> 
@@ -73,8 +77,13 @@
 </div>
 
 <script>
+
+    document.body.insertAdjacentHTML("afterbegin", 
+    "<p>put your money<Br/>where your mouth is</p>");
+
     document.addEventListener("DOMContentLoaded", loadNavbar());
     document.addEventListener("DOMContentLoaded", counter());
+
 </script>
 
 </body>
