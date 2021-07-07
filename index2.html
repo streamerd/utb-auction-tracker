@@ -12,6 +12,10 @@
 		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="css/demo.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
+
+        <script src="./js/navbar.js"></script>
+        <link rel="stylesheet" href="./css/retro-navbar.css" />
+
 		<!--[if IE]>
   		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
@@ -20,9 +24,30 @@
 		<div id="container" class="container intro-effect-fadeout">
 			<!-- Top Navigation -->
 			<div class="codrops-top clearfix">
+                <nav class="top-right open">
+                    <a class="disc l1" href="./contact.html">
+                        <div>
+                        reach out
+                            </div>
+                    </a>
+                    <a class="disc l2"  href="./music.html">
+                        <div>multimedia</div>
+                    </a>
+                    <a class="disc l3" href="https://www.utblifestyle.store/" target="_blank">
+                        <div>store</div>
+                    </a>
+                    <a class="disc l4" href="./timeline.html">
+                        <div>timeline</div>
+                    </a>
+                    <a class="disc l5 toggle">
+                        menu
+                    </a>
+                </nav>
 				<a href="./index.html"><span><img src="./img/utb.png" width="32px" height="32px"/></span></a> 
-				<!-- <span class="right"><a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=19119"><span>Go to timeline</span></a></span> -->
 			</div>
+
+            
+
 			<header class="header">
 				<div class="bg-img"><img src="img/d_n_g.jpeg" alt="David vs. Goliath" /></div>
 
@@ -70,6 +95,9 @@
 		</div><!-- /container -->
 		<script src="js/classie.js"></script>
 		<script>
+
+        document.addEventListener("DOMContentLoaded", loadNavbar());
+
 			(function() {
 
 				// detect if IE : from http://stackoverflow.com/a/16657946		
