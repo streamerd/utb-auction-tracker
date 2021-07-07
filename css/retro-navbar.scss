@@ -35,6 +35,11 @@ nav {
 		top: -$size * ($items - 2.2);
 		right: -$size * ($items - 2.2);
 	}
+
+	&.top-left {
+		top: -$size * ($items - 2.2);
+		right: $size * ($items + 2.2);
+	}
 }
 
 .disc {	

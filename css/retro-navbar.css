@@ -17,6 +17,10 @@ nav {
     top: -140px;
     right: -140px; }
 
+    nav.top-left {
+      top: -180px ;
+      left: -160px; }
+
 .disc {
   position: absolute;
   display: inline-block;
