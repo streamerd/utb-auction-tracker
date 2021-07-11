@@ -26,7 +26,7 @@ body {
     margin: 4px;
     padding: 5px;
     background: #202225;
-    flex: 1 6 20%;
+    flex: 1 6 30%;
     order: 3;
     font-weight:bold;
   }
@@ -61,7 +61,7 @@ p {
     margin: 4px;
     padding: 5px;
     background: #ffffff;
-    flex: 3 1 60%;
+    flex: 3 1 100%;
     order: 2;
   }
   
@@ -154,7 +154,7 @@ p {
       #main > aside > details {
       
         /* transform: none; */
-        font-size: 3rem;
+        font-size: 2rem;
         margin-bottom: 4px;
         margin-top: 4px;
     
