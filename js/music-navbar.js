@@ -1,10 +1,8 @@
 function loadNavbar() {
     toggle = document.querySelectorAll(".toggle")[0];
 nav = document.querySelectorAll("nav")[0];
-toggle_open_text = 'hey!';
 
-
-toggle_close_text = `<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+toggle_open_text = `<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 width="116px" height="116px" viewBox="0 0 226 226" enable-background="new 0 0 226 226" xml:space="preserve">
 <g id="record">
 <circle fill="#2C3E50" cx="112.11" cy="121.222" r="88.333"/>
@@ -35,6 +33,8 @@ width="116px" height="116px" viewBox="0 0 226 226" enable-background="new 0 0 22
    "/>
 </g>
 </svg>`;
+
+toggle_close_text = `<img src="./img/utb.png" width="110px" height="110px">`;
 
 toggle.addEventListener('click', function() {
 	nav.classList.toggle('open');
