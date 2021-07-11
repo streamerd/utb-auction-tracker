@@ -6,9 +6,15 @@
     <link rel="stylesheet" href="./css/retro-navbar.css"/>
         <link rel="stylesheet" href="./css/top-vibration.css" >
 
-
-    <script src="./js/countdown.js"></script>
     <script src="./js/navbar.js"></script>
+    <script src="./js/countdown.js"></script>
+
+     <!-- Horizontal timeline -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ycodetech/horizontal-timeline-2.0@2/css/horizontal_timeline.2.0.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ycodetech/horizontal-timeline-2.0@2/JavaScript/horizontal_timeline.2.0.min.js"></script>
+     <!-- / Horizontal timeline -->
+
 </head>
 
 <body>
@@ -19,19 +25,24 @@
 
     <div id="navbar">
         <nav class="top-right open">
-            <a class="disc l1" href="./contact.html">
+            <!-- <a class="disc l1" href="./contact.html">
                 <div>
-                reach out
+                contact
                     </div>
-            </a>
-            <a class="disc l2"  href="./music.html">
+            </a> -->
+            <!-- <a class="disc l2"  href="./music.html">
                 <div>multimedia</div>
             </a>
             <a class="disc l3" href="https://www.utblifestyle.store/" target="_blank">
                 <div>store</div>
             </a>
+            -->
+
+            <a class="disc l3" href="./about.html">
+                <div>shop</div>
+            </a>
             <a class="disc l4" href="./about.html">
-                <div>about</div>
+                <div>contact</div>
             </a>
             <a class="disc l5 toggle">
                 <img src="./img/utb.png" width="110px" height="110px">
@@ -71,16 +82,15 @@
             </div>
           </div>
 
+          <br><br>
           <div id="auction-results">
             <details style="cursor: pointer; color: rgb(14, 13, 13); background: yellow; margin-bottom: 20px;">
                 <summary>auction results</summary>        
                 <p>..will be here</p>
             </details>
+            <br><br>
 
-            <details style="cursor: pointer; color: rgb(14, 13, 13); background: yellow; margin-bottom: 20px;">
-                <summary>Money Mouth Smiley's history</summary>        
-                <p>..will be here</p>
-            </details>
+       
       
          
         </div>
@@ -103,16 +113,7 @@
                 You might not know the Money Mouth Smiley© was designed and copyrighted in 2007 by Under the Bottom, then a dashing duo of joyful, poor Black boys from the industrial armpits of Los Angeles who had their eyes on more and wanted to manifest it. 
             </p>
 
-            <div id="asd">
-                <h1> 
-                    Under the <br>
-                    B<span>
-                    <img src="./img/utb.png" width="46px" height="46px">
-                    </span>tt<span>
-                    <img src="./img/utb.png" width="46px" height="46px"></span>
-                    m
-                </h1>
-              </div>
+           
 
             <p>
                 In its formative years, what started as an inside slang symbol for a tight-knit community of SoCal art hustlers, grew into an iconic brand in hip hop and streetwear culture, drawn on by rap icons from Diddy to Wiz Khalifa.
@@ -126,15 +127,49 @@
             </p>
             
           </div>
+          
+        </article>
+        <details style="color: rgb(236, 232, 232); background: rgb(14, 14, 10); margin-bottom: 6px;">
+          <summary style="min-width: 360px; cursor: pointer; background: yellow; color:black"><strong>who are we?</strong></summary> 
+          <div id="asd">
+            <h1> 
+                Under the <br>
+                B<span>
+                <img src="./img/utb.png" width="46px" height="46px">
+                </span>tt<span>
+                <img src="./img/utb.png" width="46px" height="46px"></span>
+                m
+            </h1>
+          </div>       
+          <p style="background: rgb(5, 5, 6); color: rgb(235, 223, 223);">
+          
+              From the creative depths of Moreno Valley, CA grew a timeless luxury lifestyle clothing line, branding agency and music Label, Dre Bigg$ and Treem Heff grew up Southern California sports stars, but also shared a unique business, fashion and entrepreneurial outlook on what was to become of their futures. 
+              <br><br>
+              In 2007 the beginning ideas of UTB Lifestyle LLC were started in the dorm rooms of Arizona State University and Cal Baptist University on sidekick 3’s via Tmail; Dozens of copy written logos were created and from these trademarks rose a new age Millennial Lifestyle Brand. 
+              <br><br>
+              Mixing art, textiles, prints and collaborative ventures with Sylvia Rhone (via Sony/ Epic) Jonny Shipes (Cinematic/ The Smokers Club) and Wiz Khalifa (Taylor Gang) have made UTB a true staple in the culture. 
+              <br><br>
+              Fashion is not just about clothes, but about creating an allure that withstands the test of time. Much has been proven, but the story is still being written. $tay tuned to see what’s next…
+          </p>
 
-    </article>
+      </details>
 
 
       <!-- <nav>Sub-navigation/Page navigation</nav> -->
         <aside>
 
-     <a href="http://www.utblifestyle.shop/" target="_blank">
-                store</a> 
+            <p>
+                <h2>
+                   <a style="cursor: pointer;" href="./music.html">
+                   <u>
+                       <strong>
+                            listen
+                       </strong>
+                   </u> </a>
+                </h2>
+            </p>
+     <!-- <a href="http://www.utblifestyle.shop/" target="_blank">
+                store</a>  -->
 <!--       
            <details open style="color: rgb(226, 220, 220); background: black; margin-bottom: 20px;">
             <summary></summary>    
@@ -173,7 +208,8 @@
 
     </div>
     <footer style="margin-top:2px;">
-                <a href="https://utbworldwide.com/about/" target="_blank">UTB Worldwide</a>
+                <a style="color: black; cursor: pointer;" href="https://utbworldwide.com/about/" target="_blank">
+                      UTB Worldwide</a>
     </footer>
 
     <nav>
@@ -181,6 +217,9 @@
     </nav>
 
     <script>
+    // $('#example').horizontalTimeline({
+    //     dateDisplay: "dayMonth"
+    //     });
             document.addEventListener("DOMContentLoaded", counter());
             document.addEventListener("DOMContentLoaded", loadNavbar());
     </script>

@@ -18,7 +18,7 @@
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
-  #asd > h1 { font-size: 2em; 
+  #asd > h1 { font-size: 1.5em; 
         background-color: #111;
         text-transform: uppercase;
         animation-duration: 0.004s;

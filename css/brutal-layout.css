@@ -1,11 +1,16 @@
 body {
     font: 16px Helvetica;
     text-align: center;
-    font-size: 1.5em;
+    font-size: 2em;
     /* font-style: italic; */
     background: #0c0f0a;
     color: #0c0f0a;
+    width:100%;
+    overflow-y: scroll; overflow-x: hidden;
+    /* overflow-x:hidden; */
   }
+
+
   
   #main {
     min-height: 800px;
@@ -13,6 +18,7 @@ body {
     padding: 0;
     display: flex;
     flex-flow: row;
+    
   }
   
 
@@ -77,6 +83,10 @@ p {
 
   }
 
+  #main > aside > details {
+    min-width: 360px;
+  }
+
   #main > aside > h2 {
     transform: rotate(90deg);
   }
@@ -112,7 +122,7 @@ p {
   }
 
   @media all and (max-width: 768px) {
-      #main, #page {
+    #main, #page {
         flex-direction: column;
       }
   
@@ -147,7 +157,6 @@ p {
         font-size: 3rem;
         margin-bottom: 4px;
         margin-top: 4px;
-    
     
       }
 
