@@ -6,9 +6,9 @@
 #countdown{
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 20px;
+	margin-top: 120px;
 	margin-bottom: 40px;
-	width: 465px;
+	width: 444px;
 	height: 112px;
 	text-align: center;
 	background: #222;
@@ -120,7 +120,7 @@
 #countdown .labels li{
 	width: 102px;
 	font: bold 15px 'Droid Sans', Arial, sans-serif;
-	color: #f47321;
+	color: aqua;
 	text-shadow: 1px 1px 0px #000;
 	text-align: center;
 	text-transform: uppercase;
