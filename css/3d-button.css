@@ -1,0 +1,174 @@
+/* Start Style [css] 
+--------------------------*/
+*{ padding: 0; margin: 0; }
+
+/* body
+{
+  background-color: #e74c3c;
+  font-family: 'Ubuntu', sans-serif;
+} */
+/* End style [css] 
+--------------------------*/
+
+/* Start 3d button 
+-------------------------*/
+
+h2
+{
+  text-align: center;
+  margin-top: 40px;
+  color: #0f1010;
+  text-transform: uppercase;
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  margin-bottom: 50px;
+}
+
+div.bu,
+div.bu-2
+{
+  text-align: center;
+  over-flow: hidden;
+  height: 40px;
+  margin-bottom: 20px;
+  line-height: 40px;
+}
+
+button,
+.radius
+{
+   -webkit-transition: all .1s ease-in-out;
+   -moz-transition: all .1s ease-in-out;
+   transition: all .1s ease-in-out;
+   margin-left: 8px;  
+}
+
+div.bu button:nth-of-type(1)
+{
+  width: 150px;
+  padding: 10px;
+  letter-spacing: 2px;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 600;
+  background-color: #2ecc71;
+  border: 1px solid #16a085;
+  box-shadow: 0 6px 0 #27ae60;
+  border-radius: 5px;
+  color: black;
+  cursor: pointer;
+}
+
+div.bu button:nth-of-type(1):active
+{
+    box-shadow: 0 2px 0 #27ae60;
+}
+
+div.bu button:nth-of-type(2)
+{
+  width: 150px;
+  padding: 10px;
+  letter-spacing: 2px;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 600;
+  background-color: #f1c40f;
+  border: 1px solid #e67e22;
+  box-shadow: 0 6px 0 #f39c12;
+  border-radius: 5px;
+  color: #ecf0f1;
+  cursor: pointer;
+}
+
+div.bu button:nth-of-type(2):active
+{
+    box-shadow: 0 2px 0 #27ae60;
+}
+
+div.bu button:nth-of-type(3)
+{
+  width: 150px;
+  padding: 10px;
+  letter-spacing: 2px;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 600;
+  background-color: #9b59b6;
+  border: 1px solid #9b59b6;
+  box-shadow: 0 6px 0 #8e44ad;
+  border-radius: 5px;
+  color: #ecf0f1;
+  cursor: pointer;
+}
+
+div.bu button:nth-of-type(3):active
+{
+    box-shadow: 0 2px 0 #27ae60;
+}
+
+div.bu-2 button:nth-of-type(1)
+{
+  width: 150px;
+  padding: 10px;
+  letter-spacing: 2px;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 600;
+  background-color: #3498db;
+  border: 1px solid #2980b9;
+  box-shadow: 0 6px 0 #2980b9;
+  border-radius: 5px;
+  color: #ecf0f1;
+  cursor: pointer;
+}
+
+div.bu-2 button:nth-of-type(1):active
+{
+    box-shadow: 0 2px 0 #27ae60;
+}
+
+div.bu-2 button:nth-of-type(2)
+{
+  width: 150px;
+  padding: 10px;
+  letter-spacing: 2px;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 600;
+  background-color: #34495e;
+  border: 1px solid #34495e;
+  box-shadow: 0 6px 0 #2c3e50;
+  border-radius: 5px;
+  color: #131414;
+  cursor: pointer;
+}
+
+div.bu-2 button:nth-of-type(2):active
+{
+    box-shadow: 0 2px 0 #27ae60;
+}
+
+div.bu-2 button:nth-of-type(3)
+{
+  width: 150px;
+  padding: 10px;
+  letter-spacing: 2px;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 600;
+  background-color: #1abc9c;
+  border: 1px solid #1abc9c;
+  box-shadow: 0 6px 0 #16a085;
+  border-radius: 5px;
+  color: #ecf0f1;
+  cursor: pointer;
+}
+
+div.bu-2 button:nth-of-type(3):active
+{
+    box-shadow: 0 2px 0 #27ae60;
+}
+
+/* End 3d button 
+-------------------------*/

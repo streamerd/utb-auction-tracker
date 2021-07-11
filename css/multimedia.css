@@ -1,6 +1,7 @@
 html{
     /* background:#f1c40f; */
-  background: rgb(219, 12, 12);
+    background-image: linear-gradient(to right, red , yellow);
+    ;
   }
   
   #needle{
