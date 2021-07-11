@@ -1,0 +1,122 @@
+body {
+    font: 16px Helvetica;
+    text-align: center;
+    font-size: 1.5em;
+    /* font-style: italic; */
+    background: #0c0f0a;
+    color: #0c0f0a;
+  }
+  
+  #main {
+    min-height: 800px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: row;
+  }
+  
+
+  /* #navbar > nav {
+    margin: 4px;
+    padding: 5px;
+    background: #ffffff;
+    flex: 3 1 60%;
+    order: 2;
+  } */
+  #left-pane > aside {
+    margin: 4px;
+    padding: 5px;
+    background: #41ead4;
+    flex: 1 6 20%;
+    order: 3;
+    font-weight:bold;
+
+  }
+
+  /* 
+   */
+
+   #boo > aside {
+    width: 40%;
+    padding-left: .5rem;
+    margin-left: .5rem;
+    float: right;
+    box-shadow: inset 5px 0 5px -5px #29627e;
+    font-style: italic;
+    color: #29627e;
+}
+
+boo > aside > p {
+    margin: .5rem;
+}
+
+p {
+    font-family: 'Fira Sans', sans-serif;
+}
+
+   
+/* 
+ */
+
+  #main > article {
+    margin: 4px;
+    padding: 5px;
+    background: #ffffff;
+    flex: 3 1 60%;
+    order: 2;
+  }
+  
+  #main > nav {
+    margin: 4px;
+    padding: 5px;
+    background: #fbff12;
+    flex: 1 6 20%;
+    order: 1;
+  }
+  
+  #main > aside {
+    margin: 4px;
+    padding: 5px;
+    background: #41ead4;
+    flex: 1 6 20%;
+    order: 3;
+    font-weight:bold;
+
+  }
+  
+  header {
+    font-weight:bold;
+
+    display: block;
+    margin: 4px;
+    padding: 5px;
+    min-height: 60px;
+    background: #ff206e;
+  }
+
+  footer {
+    font-weight:bold;
+
+    display: block;
+    margin: 4px;
+    padding: 5px;
+    min-height: 60px;
+    background: #ff8120;
+  }
+
+  @media all and (max-width: 640px) {
+      #main, #page {
+        flex-direction: column;
+      }
+  
+      #main > article, #main > nav, #main > aside {
+        order: 0;
+      }
+  
+      #main > nav, #main > aside, header, footer {
+        min-height: 50px;
+        max-height: 50px;
+      }
+      
+  }
+  
