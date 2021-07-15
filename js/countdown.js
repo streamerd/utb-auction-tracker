@@ -3,7 +3,7 @@ function counter() {
     countDownDate.toLocaleDateString("en-US", {timeZone: "America/Los_Angeles"})
     countDownDate = countDownDate.getTime();
     
-    countFirst(countDownDate);
+    countFirst(countDownDate); // run once, fill the ETA and then repeat it every minute.
 
     setInterval(function() {
         var now = new Date()
@@ -24,7 +24,6 @@ function counter() {
 }
 
 function countFirst(countDownDate) {
-    console.log("asdasdasdasdasdadasdasd");
     var now = new Date()
     now.toLocaleDateString("en-US", {timeZone: "America/Los_Angeles"})
     now = now.getTime();
