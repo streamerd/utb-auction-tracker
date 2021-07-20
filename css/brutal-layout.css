@@ -3,7 +3,7 @@ body {
     text-align: center;
     font-size: 2em;
     /* font-style: italic; */
-    background: #0c0f0a;
+    background: black;
     color: #0c0f0a;
     width:100%;
     overflow-y: scroll; overflow-x: hidden;
