@@ -47,6 +47,7 @@ nav {
   right: 0px;
   bottom: 0px;
   background: tomato;
+  color: black;
   transition-delay: 0s; }
   .open .l1 {
     transition-delay: 0s;
@@ -68,6 +69,8 @@ nav {
   right: 50px;
   bottom: 50px;
   background: #ff7a39;
+  color: black;
+
   transition-delay: 0.1s; }
   .open .l2 {
     transition-delay: 0.1s;
@@ -89,6 +92,8 @@ nav {
   right: 100px;
   bottom: 100px;
   background: #ff912b;
+  color: black;
+
   transition-delay: 0.2s; }
   .open .l3 {
     transition-delay: 0.2s;
@@ -110,6 +115,8 @@ nav {
   right: 150px;
   bottom: 150px;
   background: #ffa91c;
+  color: black;
+
   transition-delay: 0.3s; }
   .open .l4 {
     transition-delay: 0.3s;
@@ -131,6 +138,8 @@ nav {
   right: 200px;
   bottom: 200px;
   background: #ffc00e;
+  color: black;
+
   transition-delay: 0.4s; }
   .open .l5 {
     transition-delay: 0.4s;
@@ -171,6 +180,7 @@ nav {
 
     a {
       all: unset;
+      color: black;
     }
     
     

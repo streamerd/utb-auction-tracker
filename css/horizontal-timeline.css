@@ -54,7 +54,7 @@ h2 {
   width: 800px;
   height: 450px;
   overflow: hidden;
-  margin: 100px auto;
+  margin: auto auto;
   position: relative;
   /* background: url('../images/dot.gif') left 45px repeat-x; */
 }
@@ -93,7 +93,7 @@ h2 {
 
 #issues li {
   width: 800px;
-  height: 650px;
+  height: 850px;
   list-style: none;
   float: left;
 }
@@ -108,8 +108,8 @@ h2 {
 
 #issues li img {
   float: left;
-  margin: 10px 30px 10px 50px;
-  background: transparent;
+  /* margin: 10px 30px 10px 50px; */
+  background: black;
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)";
   /* IE 8 */
   
