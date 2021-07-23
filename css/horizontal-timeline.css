@@ -1,7 +1,7 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
-}
+} */
 
 /* body {
   background: #222;
@@ -100,6 +100,7 @@ h2 {
 }
 
 #issues li.selected img {
+  /* margin-top: 30px; */
   max-height: 650px;
   /* -webkit-transform: scale(1.1, 1.1);
   -moz-transform: scale(1.1, 1.1);
@@ -145,12 +146,12 @@ h2 {
 
 #issues li p {
   font-size: .8em;
-  margin-right: 70px;
+  margin-right: 40px;
   margin-top: 20px;
   margin-bottom: 20px;
   margin-left: 70px;
   font-weight: normal;
-  line-height: 22px;
+  line-height: 1em;
   text-shadow: #000 1px 1px 2px;
 
 }
