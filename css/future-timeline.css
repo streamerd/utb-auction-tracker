@@ -18,8 +18,8 @@
     position: relative;
     border-top: 4px solid #06182E;
     border-radius: 16px;
-    min-width: 280px;
-    max-width: 580px;
+    min-width: 640px;
+    max-width: 960px;
     background-image: url('../img/roadmap-bg-02.jpeg');
   }
   
