@@ -13,14 +13,14 @@
     color: rgb(59, 50, 50);
     font-weight: bold;
     padding: 10px;
-    font-size: 18px;
+    font-size: 24px;
     text-align: center;
     position: relative;
     border-top: 4px solid #06182E;
     border-radius: 16px;
     min-width: 640px;
     max-width: 960px;
-    background-image: url('../img/roadmap-bg-02.jpeg');
+    background-image: url('../img/roadmap-bg.png');
   }
   
   .entry img {
@@ -59,7 +59,7 @@
   
   .entry h1 {
     color: #fff;
-    font-size: 18px;
+    font-size: 32px;
     /* font-family: Georgia, serif; */
     margin-bottom: 10px;
   }
@@ -67,7 +67,8 @@
   .entry h2 {
     letter-spacing: .2em;
     margin-bottom: 10px;
-    font-size: 14px;
+    font-size: 22px;
+    font-weight: bolder;
   }
   
   .bar {
