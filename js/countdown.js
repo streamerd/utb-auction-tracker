@@ -1,5 +1,5 @@
 function counter() {
-    var countDownDate = new Date("August 5, 2021 21:00:00")
+    var countDownDate = new Date("August 5, 2021 12:00:00")
     countDownDate.toLocaleDateString("en-US", {timeZone: "America/Los_Angeles"})
     countDownDate = countDownDate.getTime();
     
