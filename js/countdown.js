@@ -1,13 +1,19 @@
 function counter() {
     var countDownDate = new Date("August 5, 2021 12:00:00")
-    countDownDate.toLocaleDateString("en-US", {timeZone: "America/Los_Angeles"})
-    countDownDate = countDownDate.getTime();
+    // countDownDate.toLocaleDateString("en-US", {timeZone: "America/Los_Angeles"})
     
 
     setInterval(function() {
-        var now = new Date()
-        now.toLocaleDateString("en-US", {timeZone: "America/Los_Angeles"})
+        // var now = new Date()
+        var now = new Date();
+        console.log(`timezone: ${Intl.DateTimeFormat().resolvedOptions().timeZone}`)
+        now.toLocaleString("en-US",Intl.DateTimeFormat().resolvedOptions().timeZone)
+        countDownDate.toLocaleString("en-US", Intl.DateTimeFormat().resolvedOptions().timeZone)
+        // now.toLocaleDateString("en-US", {timeZone: "America/Los_Angeles"})
+        countDownDate = countDownDate.getTime();
+
         now = now.getTime();
+        console.log(`now: ${now}`);
 
         var timeleft = countDownDate - now;
             
