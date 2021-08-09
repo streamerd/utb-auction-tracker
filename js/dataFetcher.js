@@ -29,6 +29,72 @@ function auctionEvents() {
 }
 }
 
+function fetchAndForwardArtworkData(editionId) {
+  try {
+    fetch('https://api.thegraph.com/subgraphs/name/knownorigin/known-origin', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          query: `
+          {
+            edition(id: ${editionId}){
+              id
+              metadataName
+              metadataArtist
+              metadataArtistAccount
+              totalAvailable
+              totalSold
+              artist{
+                id
+              }
+        
+              transfers{
+                timestamp
+                transactionHash
+              }
+              activeBid{
+                timestamp
+              }
+            }
+          }
+       `
+
+        }),
+      }).then((res) => res.json())
+        // .then((result) => console.log(result.data['auctionEvents'][0]));
+        .then((result) => {
+          console.log("results from getEditionMetadata => " + JSON.stringify(result))
+          writeArtworkDetails(result.data);
+        });
+
+} catch (error) {
+   console.log(error)
+}
+}
+
+function writeArtworkDetails(edition) {
+  editionData = edition["edition"];
+  editionId = editionData["id"];
+  artworkName = editionData["metadataName"];
+  artistName = editionData["metadataArtist"];
+
+
+
+  console.log(`
+  edition id: ${editionId} \n
+  artwork name: ${artworkName} \n
+  artist name: ${artistName} \n
+  `);
+
+
+  document.getElementById("artwork-name-" + editionId).innerHTML = artworkName
+  document.getElementById("artist-name-" + editionId).innerHTML = "by " + artistName;
+
+}
+
+
 function getBiddingHistory(editionId) {
    try {
         fetch('https://api.thegraph.com/subgraphs/name/knownorigin/known-origin', {
@@ -41,14 +107,6 @@ function getBiddingHistory(editionId) {
               {
                 edition(id: ${editionId}){
                   id
-                  metadataName
-                  metadataArtist
-                  metadataArtistAccount
-                  totalAvailable
-                  totalSold
-                  artist{
-                    id
-                  }
                   biddingHistory{
                     name
                     timestamp
@@ -73,7 +131,6 @@ function getBiddingHistory(editionId) {
             // .then((result) => console.log(result.data['auctionEvents'][0]));
             .then((result) => {
               writeArtworkDetails(result.data);
-              writeBiddindHistory(result.data);
             });
 
 } catch (error) {
@@ -81,22 +138,7 @@ function getBiddingHistory(editionId) {
 }
 }
 
-function writeArtworkDetails(edition) {
-  editionData = edition["edition"];
-  editionId = editionData["id"];
-  artworkName = editionData["metadataName"];
-  artistName = editionData["metadataArtist"];
 
-  console.log(`
-  edition id: ${editionId} \n
-  artwork name: ${artworkName} \n
-  artist name: ${artistName} \n
-  `);
-
-  document.getElementById("artwork-name").innerHTML = artworkName
-  document.getElementById("artist-name").innerHTML = "by " + artistName;
-
-}
 function writeBiddindHistory(edition) {
   editionData = edition['edition']
   biddings = editionData["biddingHistory"]
@@ -107,7 +149,7 @@ function writeBiddindHistory(edition) {
   bidder = firstBidding["bidder"];
   timestamp = epochToLocalDatetime(firstBidding["timestamp"]); // convert from epoch
   ethValue = firstBidding["ethValue"]
-  artistName
+  
 
   // console.log(`first bidding: ${JSON.stringify(firstBidding)}`);
 

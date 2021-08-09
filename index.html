@@ -9,16 +9,18 @@
         <link rel="stylesheet" href="./css/3d-button.css" />
 		<link rel="stylesheet" href="./css/modal-img.css" />
         <link rel="stylesheet" href="./css/tabs.css" />
+		<link rel="stylesheet" href="./css/result-cards.css" />
 
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
 
         <link rel="stylesheet" href="./css/socials.css" />
         <link rel="stylesheet" href="./css/horizontal-timeline.css">
         <link rel="stylesheet" href="./css/future-timeline.css" />
-
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	
     <script src="./js/navbar.js"></script>
 	<script src="./js/history.js"></script>
+	<script src="./js/newDataFetcher.js"></script>
     <!-- <script src="./js/countdown.js"></script> -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -165,7 +167,7 @@
           </div> -->
 		  
 
-		  <a href="./calendars/utb-nft-auction.ics" 
+		  <!-- <a href="./calendars/utb-nft-auction.ics" 
 		  
 		  style="background: black; 
 				  color: yellow; 
@@ -177,13 +179,78 @@
 				  <span>e</span> 
 				  <span style="color: green;">r</span> 
 				  e</u>
-		  </a>
+		  </a> -->
 		  </article>
-		  
+		
 	
           <br><br>
-          <div id="auction-results">
-                <a href="./bidding-history.html" style="color: rgb(247, 217, 45)!important; cursor: pointer; background-color: rgb(147, 42, 31); padding: 20px;">bidding activity </a> 
+          <div id="auction-results" style="color: white; font-size: 20px;">
+
+
+			<div class="tab">
+				<button class="tablinks" onclick="openCity(event, 'London')">UTB.NFT.001</button>
+				<button class="tablinks" onclick="openCity(event, 'Paris')">UTB.NFT.002</button>
+				<button class="tablinks" onclick="openCity(event, 'Tokyo')">UTB.NFT.003</button>
+			  </div>
+			  <hr>
+			  <div id="London" class="tabcontent" style="font-weight: 700;">
+				  <div id="592200-results" style="padding: 6px; margin: 30px; font-size: 32px;"></div>
+				 
+				  <div class="featureListItem">
+					<div class="featureListItem__icon">
+						<div class="icon fa fa-dashboard"></div>
+					</div>
+					<div class="featureListItem featureListItem--reverse">
+					  <div class="featureListItem__icon">
+						<div class="icon fa fa-calendar"></div>
+
+					  </div>
+					  <div class="featureListItem__description"><div id="592200-last-bid-eth-value" style="background-color: yellow;"></div></div>
+					</div>
+					
+					<div class="featureListItem__description">
+						<div id="592200-last-bid-timestamp" 
+							style="font-weight: 700;"
+						></div></div>
+				  </div>
+				  <div class="featureListItem">
+					<div class="featureListItem__icon">
+					  <div class="icon fas fa-grin-hearts"></div>
+					</div>
+					<div class="featureListItem__description">
+							<div id="592200-last-bidder-addr"></div>
+							<div id="592200-last-transaction-hash"></div>
+					</div>
+				  </div>
+
+				  <!-- <div class="container">
+					  <div class="row">
+						  <div class="col" style="max-width: 30%;"><div id="592200-last-bid-eth-value" ></div></div>
+						  <div class="col" style="max-width: 30%;"><div id="592200-last-bidder-addr" style="color:turquoise;"></div></div>
+					  </div>
+				  </div> -->
+				  
+
+			  </div>
+			  <br>
+			  <hr>
+			  <div id="Paris" class="tabcontent">
+				  <div id="595700-results" style=" padding: 6px; margin: 30px;"></div>
+				  
+				  <a href="" target="_blank" style="color: black; background-color:rgb(114, 255, 71)">checkout the auction @ KnownOrigin</a>
+
+			  </div>
+			  <br>
+			  <hr>
+			  <div id="Tokyo" class="tabcontent">
+				  <div id="595800-results" style=" padding: 6px; margin: 30px;"></div>
+
+				  <a href="" target="_blank" style="color: black; background-color:rgb(114, 255, 71)">checkout the auction @ KnownOrigin</a>
+				</div>
+			  <br>
+			  <hr>
+            
+			<!-- <a href="./bidding-history.html" style="color: rgb(247, 217, 45)!important; cursor: pointer; background-color: rgb(147, 42, 31); padding: 20px;">bidding activity </a>  -->
         </div>
 
 	          
@@ -759,11 +826,37 @@
 	<!-- horizontal timeline script -->
 
 
+
+
     <script>
 		document.addEventListener("DOMContentLoaded", loadNavbar());
         // document.addEventListener("DOMContentLoaded", counter());
 		document.addEventListener("DomContentLoaded", loadHistory());
+
+		var editionIds = ["592200", "595800", "595700"];
+		document.addEventListener("DOMContentLoaded", 
+                                  editionIds.forEach(editionId => {
+                                            console.log(`>>> ran method: getBiddingHistory(${editionId})`)
+                                            fetchAndForwardArtworkData(editionId);
+                                            // getBiddingHistory(editionId);
+                                                }));
    </script>
+
+<script>
+	function openCity(evt, cityName) {
+	  var i, tabcontent, tablinks;
+	  tabcontent = document.getElementsByClassName("tabcontent");
+	  for (i = 0; i < tabcontent.length; i++) {
+		tabcontent[i].style.display = "none";
+	  }
+	  tablinks = document.getElementsByClassName("tablinks");
+	  for (i = 0; i < tablinks.length; i++) {
+		tablinks[i].className = tablinks[i].className.replace(" active", "");
+	  }
+	  document.getElementById(cityName).style.display = "block";
+	  evt.currentTarget.className += " active";
+	}
+	</script>
 
 <!-- goatcounter dashboard -->
 	<script data-goatcounter="https://utbnft.goatcounter.com/count"

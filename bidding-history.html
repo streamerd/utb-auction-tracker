@@ -67,44 +67,116 @@
 
 <div class="card-box">
   <div class="big-card">
-   <div class="card-header">
-    <div class="set-icon">
-      <img src="./img/utb.png" style="background-color: black; height: 100px; width: 100px;"/>
+    <div class="card-header">
+      <div class="set-icon">
+        <img src="./img/utb.png" style="background-color: black; height: 100px; width: 100px;"/>
 
+      </div>
+      <div class="card-title" id="artwork-name-592200"></div>
+      <div class="collection-total-value" id="artist-name-592200">Bidding will start @ August 5</div>
     </div>
-    <div class="card-title" id="artwork-name"></div>
-    <div class="collection-total-value" id="artist-name">Bidding will start @ August 5</div>
-   </div>
-   <div class="big-card-count"></div>
-   <!-- <div class="big-card-bar"></div> -->
+    <div class="big-card-count"></div>
+    <!-- <div class="big-card-bar"></div> -->
+    </div>
+    <div class="set-card-box">
+      <div class="set-card">
+        <div class="set-icon">
+          <img src="./img/bid_placed.png" style="background-color: black; height: 124px; width: 124px;"/>
+        </div>
+        <div class="set-info">
+          <div class="set-title" id="bid-name"></div>
+          <div class="set-value" id="bid-value-eth"></div>
+          <div class="collection-count" id="bidder-address"></div>
+          <div class="collection-count" id="bid-timestamp"> </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="set-card-box">
-   <div class="set-card">
-    <div class="set-icon">
-      <img src="./img/bid_placed.png" style="background-color: black; height: 124px; width: 124px;"/>
+ </div>
 
-    </div>
-    <div class="set-info">
-     <div class="set-title" id="bid-name"></div>
-     <div class="set-value" id="bid-value-eth"></div>
-     <div class="collection-count" id="bidder-address"></div>
-     <div class="collection-count" id="bid-timestamp"> </div>
 
-     <!-- <div class="count-bar"></div> -->
+<div class="card-box">
+  <div class="big-card">
+    <div class="card-header">
+      <div class="set-icon">
+        <img src="./img/utb.png" style="background-color: black; height: 100px; width: 100px;"/>
+
+      </div>
+      <div class="card-title" id="artwork-name-592800"></div>
+      <div class="collection-total-value" id="artist-name-592800">Bidding will start @ August 5</div>
     </div>
-   </div>
-   
-    
-   </div>
+    <div class="big-card-count"></div>
+    <!-- <div class="big-card-bar"></div> -->
+    </div>
+    <div class="set-card-box">
+      <div class="set-card">
+        <div class="set-icon">
+          <img src="./img/bid_placed.png" style="background-color: black; height: 124px; width: 124px;"/>
+        </div>
+        <div class="set-info">
+          <div class="set-title" id="bid-name"></div>
+          <div class="set-value" id="bid-value-eth"></div>
+          <div class="collection-count" id="bidder-address"></div>
+          <div class="collection-count" id="bid-timestamp"> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+
+
+<div class="card-box">
+  <div class="big-card">
+    <div class="card-header">
+      <div class="set-icon">
+        <img src="./img/utb.png" style="background-color: black; height: 100px; width: 100px;"/>
+
+      </div>
+      <div class="card-title" id="artwork-name-592700"></div>
+      <div class="collection-total-value" id="artist-name-592700">Bidding will start @ August 5</div>
+    </div>
+    <div class="big-card-count"></div>
+    <!-- <div class="big-card-bar"></div> -->
+    </div>
+    <div class="set-card-box">
+      <div class="set-card">
+        <div class="set-icon">
+          <img src="./img/bid_placed.png" style="background-color: black; height: 124px; width: 124px;"/>
+        </div>
+        <div class="set-info">
+          <div class="set-title" id="bid-name"></div>
+          <div class="set-value" id="bid-value-eth"></div>
+          <div class="collection-count" id="bidder-address"></div>
+          <div class="collection-count" id="bid-timestamp"> </div>
+        </div>
+      </div>
+    </div>
   </div>
  </div>
 
 
 
+
 <script>
-  var editionId = "592200";
+
+var editionIds = ["592200", "595700", "595800"];
+
+
+
+// var editionId = "592200";
   document.addEventListener("DOMContentLoaded", loadNavbar());
-  document.addEventListener("DOMContentLoaded", getBiddingHistory(editionId));
+  document.addEventListener("DOMContentLoaded", 
+                                  editionIds.forEach(editionId => {
+                                            console.log(`>>> ran method: getBiddingHistory(${editionId})`)
+                                            fetchAndForwardArtworkData(editionId);
+                                            getBiddingHistory(editionId);
+                                                }));
+
+
+
+  // var editionId = "592200";
+  // document.addEventListener("DOMContentLoaded", loadNavbar());
+  // document.addEventListener("DOMContentLoaded", getBiddingHistory(editionId));
 
 </script>
 
