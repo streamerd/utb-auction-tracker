@@ -144,7 +144,7 @@ function writeBiddindHistory(edition) {
         transactionHash = bid["transactionHash"]
 
         document.getElementById("592200-last-bid-timestamp").innerHTML =  "@ " + timestamp;
-        document.getElementById("592200-last-bid-eth-value").innerHTML = "highest amount:  <br>" + ethValue + " ETH";
+        document.getElementById("592200-last-bid-eth-value").innerHTML = ethValue + " ETH";
 
         
         document.getElementById("592200-last-bidder-addr").innerHTML =  " <br>last bidder: <br> " +bidder;
