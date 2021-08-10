@@ -131,9 +131,6 @@ function epochToLocalDatetime(timestamp) {
     return date;
   }
 
-  function cut(str, cutStart, cutEnd) {
-    return str.substr(0, cutStart + str.substr(cutEnd + 1));
-  }
 function writeBiddindHistory(edition) {
     editionData = edition['edition']
     biddings = editionData["biddingHistory"]
@@ -146,7 +143,7 @@ function writeBiddindHistory(edition) {
         ethValue = bid["ethValue"]
         transactionHash = bid["transactionHash"]
 
-        document.getElementById("592200-last-bid-timestamp").innerHTML =  "@ " + timestamp;
+        document.getElementById("592200-last-bid-timestamp").innerHTML =  "@ " + String(timestamp).substr(0, 32);
         document.getElementById("592200-last-bid-eth-value").innerHTML = ethValue + " ETH";
 
         //make bidder with masking middle part
