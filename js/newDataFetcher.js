@@ -131,6 +131,9 @@ function epochToLocalDatetime(timestamp) {
     return date;
   }
 
+  function cut(str, cutStart, cutEnd) {
+    return str.substr(0, cutStart + str.substr(cutEnd + 1));
+  }
 function writeBiddindHistory(edition) {
     editionData = edition['edition']
     biddings = editionData["biddingHistory"]
@@ -146,7 +149,11 @@ function writeBiddindHistory(edition) {
         document.getElementById("592200-last-bid-timestamp").innerHTML =  "@ " + timestamp;
         document.getElementById("592200-last-bid-eth-value").innerHTML = ethValue + " ETH";
 
-        
+        //make bidder with masking middle part
+                //"0x1d1...70b91"
+
+        bidder = bidder.substr(0,5) + "..." + bidder.substr(bidder.length - 5, bidder.length - 1)
+
         document.getElementById("592200-last-bidder-addr").innerHTML =  " <br>last bidder: <br> " +bidder;
         document.getElementById("592200-last-transaction-hash").innerHTML =  " <br>TX:  " + "<a href=\"https://etherscan.io/tx/" + transactionHash + "\" target=\"blank\" style=\"cursor:pointer;\">" + transactionHash+ "</a>";
 
