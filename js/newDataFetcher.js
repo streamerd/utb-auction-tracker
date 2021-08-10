@@ -35,6 +35,7 @@ function fetchAndForwardArtworkData(editionId) {
           // .then((result) => console.log(result.data['auctionEvents'][0]));
           .then((result) => {
             writeArtworkDetails(result.data);
+            fetchAndForwardBiddingHistory(editionId);
           });
   
   } catch (error) {
@@ -51,24 +52,12 @@ function writeArtworkDetails(edition) {
     artistName = editionData["metadataArtist"];
   
   
-  
-    console.log(` writing artwork details for: 
-    edition id: ${editionId} \n
-    artwork name: ${artworkName} \n
-    artist name: ${artistName} \n
-    `);
-  
-  
-    console.log(`writing to element: utb-" + ${editionId} + "-results"`);
     //artwork name 
     document.getElementById(editionId + "-results").innerHTML = artworkName;
-    
-  // just call getBiddingHistory
-
-  getBiddingHistory(editionId);
+  
   }
 
-function getBiddingHistory(editionId) {
+function fetchAndForwardBiddingHistory(editionId) {
     try {
         fetch('https://api.thegraph.com/subgraphs/name/knownorigin/known-origin', {
             method: 'POST',
@@ -131,6 +120,11 @@ function epochToLocalDatetime(timestamp) {
     return date;
   }
 
+
+function maskString(text) {
+  return text.substr(0,5) + "..." + text.substr(text.length - 5, text.length - 1)
+}
+
 function writeBiddindHistory(edition) {
     editionData = edition['edition']
     biddings = editionData["biddingHistory"]
@@ -143,26 +137,19 @@ function writeBiddindHistory(edition) {
         ethValue = bid["ethValue"]
         transactionHash = bid["transactionHash"]
 
-        document.getElementById("592200-last-bid-timestamp").innerHTML =  "@ " + String(timestamp).substr(0, 32);
+        document.getElementById("592200-last-bid-timestamp").innerHTML =  "@ " + String(timestamp).substr(0, 32); // display first half of the date string
         document.getElementById("592200-last-bid-eth-value").innerHTML = ethValue + " ETH";
 
-        //make bidder with masking middle part
+        //make bidder and transactionHash to things like 
                 //"0x1d1...70b91"
 
-        bidder = bidder.substr(0,5) + "..." + bidder.substr(bidder.length - 5, bidder.length - 1)
+        bidder = maskString(bidder);
+        transactionHash = maskString(transactionHash);
 
-        document.getElementById("592200-last-bidder-addr").innerHTML =  " <br>last bidder: <br> " +bidder;
-        document.getElementById("592200-last-transaction-hash").innerHTML =  " <br>TX:  " + "<a href=\"https://etherscan.io/tx/" + transactionHash + "\" target=\"blank\" style=\"cursor:pointer;\">" + transactionHash+ "</a>";
+        document.getElementById("592200-last-bidder-addr").innerHTML =  " <br>last bidder: <br> " + bidder;
+        document.getElementById("592200-last-transaction-hash").innerHTML =  " <br>transaction hash:  " + "<a href=\"https://etherscan.io/tx/" + transactionHash + "\" target=\"blank\" style=\"cursor:pointer;\">" + transactionHash+ "</a>";
 
-        console.log(
-            `
-            bidName = ${bid["name"]} \n
-            bidder = ${bid["bidder"]} \n
-            timestamp = ${epochToLocalDatetime(bid["timestamp"])};\n // convert from epoch
-            ethValue = ${bid["ethValue"]}\n
-            transactionHash = ${bid["transactionHash"]}\n
-            `
-        )
+       
         });
 
         biddingIndex ++;
