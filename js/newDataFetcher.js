@@ -128,7 +128,6 @@ function maskString(text) {
 function writeBiddindHistory(edition) {
     editionData = edition['edition']
     biddings = editionData["biddingHistory"]
-    var biddingIndex = 0;
 
     biddings.forEach(bid => {
         bidName = bid["name"]
@@ -140,35 +139,11 @@ function writeBiddindHistory(edition) {
         document.getElementById("592200-last-bid-timestamp").innerHTML =  "@ " + String(timestamp).substr(0, 32); // display first half of the date string
         document.getElementById("592200-last-bid-eth-value").innerHTML = ethValue + " ETH";
 
-        //make bidder and transactionHash to things like 
-                //"0x1d1...70b91"
-
         bidder = maskString(bidder);
-        transactionHash = maskString(transactionHash);
 
         document.getElementById("592200-last-bidder-addr").innerHTML =  " <br>last bidder: <br> " + bidder;
-        document.getElementById("592200-last-transaction-hash").innerHTML =  " <br>transaction hash:  " + "<a href=\"https://etherscan.io/tx/" + transactionHash + "\" target=\"blank\" style=\"cursor:pointer;\">" + transactionHash+ "</a>";
-
-       
+        document.getElementById("592200-last-transaction-hash").innerHTML =  " <br>transaction hash:  " + "<a href=\"https://etherscan.io/tx/" + transactionHash + "\" target=\"blank\" style=\"cursor:pointer;\">" + maskString(transactionHash) + "</a>";
         });
 
-        biddingIndex ++;
- 
-    //
-//   firstBidding = biddings[0];
-    // bidName = firstBidding["name"]
-    // bidder = firstBidding["bidder"];
-    // timestamp = epochToLocalDatetime(firstBidding["timestamp"]); // convert from epoch
-    // ethValue = firstBidding["ethValue"]
-    
-  
-    // console.log(`first bidding: ${JSON.stringify(firstBidding)}`);
-  
-
-    // document.getElementById("bid-name").innerHTML = bidName;
-    // document.getElementById("bidder-address").innerHTML = bidder;
-    // document.getElementById("bid-timestamp").innerHTML = timestamp;
-    // document.getElementById("bid-value-eth").innerHTML = ethValue + " ETH";
-  
   
   }
